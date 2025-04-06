@@ -1,5 +1,6 @@
 package com.onesion.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +15,32 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/book")
 public class BookController {
 
+    // 读取yaml数据中单一数据
+    @Value("${country}")
+    private String country1;
+
+    @Value("${user.name}")
+    private String name1;
+
+    @Value("${likes[1]}")
+    private String likes1;
+
+    @Value("${users[1].age}")
+    private String age1;
+
+    @Value("${server.port}")
+    private String port;
+
     @GetMapping
     public String getById() {
-        System.out.println("springboot is running...2");
-        return "springboot is running...2";
+        System.out.println("springboot is running...");
+
+        System.out.println("country1========>" + country1);
+        System.out.println("name1========>" + name1);
+        System.out.println("likes1========>" + likes1);
+        System.out.println("age1========>" + age1);
+        System.out.println("port========>" + port);
+
+        return "springboot is running...";
     }
 }
