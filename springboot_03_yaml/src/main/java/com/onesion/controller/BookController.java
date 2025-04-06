@@ -31,6 +31,9 @@ public class BookController {
     @Value("${server.port}")
     private String port;
 
+    @Value("${tempDir}")
+    private String tempDir;
+
     @GetMapping
     public String getById() {
         System.out.println("springboot is running...");
@@ -40,6 +43,8 @@ public class BookController {
         System.out.println("likes1========>" + likes1);
         System.out.println("age1========>" + age1);
         System.out.println("port========>" + port);
+
+        System.out.println("tempDir========>" + tempDir);
 
         return "springboot is running...";
     }
