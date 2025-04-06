@@ -1,0 +1,52 @@
+country: china
+province: beijing
+city: beijing
+area: haidian
+
+port: 8080
+
+party: true
+
+birthday: 1949-10-01
+
+# 对象格式
+user:
+  name: itcast
+  age: 16
+
+user2:
+  name: itheima
+  age: 16
+
+a:
+  b:
+    c:
+      d:
+        e: 123
+
+likes:
+  - game
+  - music
+  - sleep
+
+likes2: {game,music,sleep}
+
+# 对象数组格式
+users:
+  - name: zhangsan
+    age: 18
+  - name: lisi
+    age: 17
+
+users2:
+  -
+    name: zhangsan
+    age: 18
+  -
+    name: lisi
+    age: 17
+
+users3: [{name:zhangsan,age=18},{name:lisi,age:17}]
+
+server:
+  port: 80
