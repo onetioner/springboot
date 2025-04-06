@@ -1,6 +1,8 @@
 package com.onesion.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +36,10 @@ public class BookController {
     @Value("${tempDir}")
     private String tempDir;
 
+    // 使用自动装配将所有的数据封装到一个对象Environment中
+    @Autowired
+    private Environment env;
+
     @GetMapping
     public String getById() {
         System.out.println("springboot is running...");
@@ -45,6 +51,11 @@ public class BookController {
         System.out.println("port========>" + port);
 
         System.out.println("tempDir========>" + tempDir);
+
+        System.out.println("--------------------------------------");
+
+        System.out.println(env.getProperty("server.port"));
+        System.out.println(env.getProperty("user.name"));
 
         return "springboot is running...";
     }
