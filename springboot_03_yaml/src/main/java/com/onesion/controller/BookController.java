@@ -1,5 +1,6 @@
 package com.onesion.controller;
 
+import com.onesion.MyDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -40,6 +41,9 @@ public class BookController {
     @Autowired
     private Environment env;
 
+    @Autowired
+    private MyDataSource myDataSource;
+
     @GetMapping
     public String getById() {
         System.out.println("springboot is running...");
@@ -56,6 +60,9 @@ public class BookController {
 
         System.out.println(env.getProperty("server.port"));
         System.out.println(env.getProperty("user.name"));
+
+        System.out.println("--------------------------------------");
+        System.out.println(myDataSource);
 
         return "springboot is running...";
     }
